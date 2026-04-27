@@ -5,7 +5,6 @@ if "x" not in st.session_state:
     st.session_state.x = random.randint(1, 20)
     st.session_state.tentatives = 0
     st.session_state.gagne=False
-if "perdu" not in st.session_state:
     st.session_state.perdu = False
 
 st.title("🎮 Jeu de devinette")
