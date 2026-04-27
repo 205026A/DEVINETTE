@@ -9,13 +9,14 @@ if "x" not in st.session_state:
 
 st.title("🎮 Jeu de devinette")
 st.write("Vous avez 3 tentatives")
-st.write(f"Tentatives restantes : {max(0, 3 - st.session_state.tentatives)}")
-st.progress(min(1.0, st.session_state.tentatives / 3))
+
 
 numero = st.number_input("Choisissez un nombre entre 1 et 20", 1, 20)
 
 if st.button("Valider") and not st.session_state.gagne and st.session_state.tentatives < 3:
     st.session_state.tentatives += 1
+    st.write(f"Tentatives restantes : {max(0, 3 - st.session_state.tentatives)}")
+    st.progress(min(1.0, st.session_state.tentatives / 3))
 
     if numero == st.session_state.x:
         st.success("Bravo vous avez gagné ! 🎉")
